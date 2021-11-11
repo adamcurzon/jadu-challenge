@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jadu Challenge{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="./css/style.css" />
+{% endblock %}
+
+{% block body %}
+<h2>Jadu Challenge Testing Table</h2>
+<table>
+<tr>
+    <th>Function</th>
+    <th>Input</th>
+    <th>Expected Output</th>
+    <th>Output</th>
+</tr>
+{% for f in functions%}
+<tr>
+    <td>{{f['function']}}</td>
+    <td>
+    {% for f in f['input'] %}
+        {{f}}
+    {% endfor %}
+    </td>
+    <td>{{f['expected output']}}</td>
+    <td>{{f['output']}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
